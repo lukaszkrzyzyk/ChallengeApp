@@ -1,29 +1,25 @@
-﻿
-// zadanie dzień 4
+﻿using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        string name = "Ewa";
-        string gender = "kobieta";
-        int age = 30;
+        int number = 45660028;
 
-        if (gender == "kobieta" && age < 30)
+        int[] counts = new int[10]; 
+
+        foreach (char digitChar in number.ToString()) 
         {
-            Console.WriteLine("Kobieta poniżej 30 lat");
+            int digit = int.Parse(digitChar.ToString()); 
+
+            counts[digit]++; 
         }
-        else if (name == "Ewa" && age == 30)
+
+        
+        for (int i = 0; i < counts.Length; i++)
         {
-            Console.WriteLine("Ewa, lat 30");
-        }
-        else if (gender == "mężczyzna" && age < 18)
-        {
-            Console.WriteLine("Niepełnoletni mężczyzna");
-        }
-        else
-        {
-            Console.WriteLine("Nie spełniono żadnego warunku.");
+            Console.WriteLine("Cyfra {0}: {1} wystąpień", i, counts[i]);
         }
     }
 }
+
